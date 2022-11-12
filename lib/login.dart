@@ -32,7 +32,7 @@ class Login extends StatelessWidget {
                 bottomRight: Radius.circular(50),
               ),
             ),
-            child: Image.asset("aunty.png"),
+            child: Image.asset("assets/images/aunty.png"),
           ),
           const Gap(40),
           const Text(
