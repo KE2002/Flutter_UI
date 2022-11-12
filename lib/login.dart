@@ -32,9 +32,7 @@ class Login extends StatelessWidget {
                 bottomRight: Radius.circular(50),
               ),
             ),
-            child: Image.network(
-              "https://s3-alpha.figma.com/hub/file/1978619515/47a34a1f-c860-4c36-a559-a5c7d62361d7-cover.png",
-            ),
+            child: Image.asset("aunty.png"),
           ),
           const Gap(40),
           const Text(
