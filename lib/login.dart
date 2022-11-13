@@ -11,14 +11,6 @@ class Login extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        // title: Text(
-        //   "Login",
-        //   style: TextStyle(
-        //     color: textColor.withOpacity(
-        //       0.80,
-        //     ),
-        //   ),
-        // ),
       ),
       body: Column(
         children: [

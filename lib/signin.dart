@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:login/constant.dart';
+import 'package:login/gender.dart';
+import 'package:login/login.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -23,7 +25,7 @@ class SignIn extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Gap(20),
-            Text(
+            const Text(
               "Welcome Back",
               style: TextStyle(color: textColor, fontSize: 32),
             ),
@@ -82,7 +84,35 @@ class SignIn extends StatelessWidget {
                 ),
               ),
             ),
-            const Text("Forgot Password?")
+            GestureDetector(
+              onTap: () {},
+              child: const Text("Forgot Password?"),
+            ),
+            const Gap(30),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Gender(),
+                    ),
+                    (Route route) => false);
+              },
+              style: ElevatedButton.styleFrom(
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(30),
+                  ),
+                ),
+              ),
+              child: const Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Text(
+                  "Enter",
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
           ],
         ),
       ),
