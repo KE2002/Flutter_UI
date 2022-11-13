@@ -20,7 +20,7 @@ class BrandCard extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
+          children: <Widget> [
             Image.asset(
               icon,
             ),

@@ -11,10 +11,10 @@ class ChooseBrand extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+      children: <Widget> [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
+          children: const <Widget>[
             Text(
               "Choose Brand",
               style: TextStyle(
@@ -37,7 +37,7 @@ class ChooseBrand extends StatelessWidget {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
-            children: const [
+            children: const <Widget>[
               BrandCard(
                 icon: "assets/images/nike.png",
                 text: 'Nike',

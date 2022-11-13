@@ -28,7 +28,7 @@ class MenSection extends StatelessWidget {
             onPressed: () {},
           ),
         ),
-        actions: [
+        actions: <Widget> [
           Container(
             margin: const EdgeInsets.only(right: 10),
             height: 45,
@@ -47,9 +47,9 @@ class MenSection extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          children: [
+          children: <Widget> [
             Row(
-              children: [
+              children: <Widget> [
                 RichText(
                   text: const TextSpan(
                     children: [
@@ -76,7 +76,7 @@ class MenSection extends StatelessWidget {
             ),
             const Gap(20),
             Row(
-              children: [
+              children: <Widget> [
                 Expanded(
                   child: TextField(
                     onChanged: (value) {},

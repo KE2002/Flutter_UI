@@ -13,7 +13,7 @@ class Login extends StatelessWidget {
         elevation: 0,
       ),
       body: Column(
-        children: [
+        children: <Widget> [
           Container(
             height: size.height * 0.5,
             width: size.width,
@@ -55,7 +55,7 @@ class Login extends StatelessWidget {
           const Gap(25),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: <Widget> [
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(

@@ -33,7 +33,7 @@ class Gender extends StatelessWidget {
                 ),
               ),
               child: Column(
-                children: [
+                children: <Widget> [
                   RichText(
                     textAlign: TextAlign.center,
                     text: const TextSpan(
@@ -59,7 +59,7 @@ class Gender extends StatelessWidget {
                   const Gap(20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+                    children: <Widget> [
                       ElevatedButton(
                         onPressed: () {
                           Navigator.push(

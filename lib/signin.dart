@@ -23,7 +23,7 @@ class SignIn extends StatelessWidget {
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
+          children: <Widget> [
             const Gap(20),
             const Text(
               "Welcome Back",
