@@ -12,111 +12,113 @@ class Login extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
       ),
-      body: Column(
-        children: <Widget> [
-          Container(
-            height: size.height * 0.5,
-            width: size.width,
-            decoration: const BoxDecoration(
-              color: primaryColor,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(50),
-                bottomRight: Radius.circular(50),
-              ),
-            ),
-            child: Image.asset("assets/images/aunty.png"),
-          ),
-          const Gap(40),
-          const Text(
-            "Discover Your",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 30,
-            ),
-          ),
-          const Gap(5),
-          const Text(
-            "Own Dream",
-            style: TextStyle(
-              fontWeight: FontWeight.w500,
-              fontSize: 20,
-            ),
-          ),
-          const Gap(17),
-          const Center(
-            child: Padding(
-              padding: EdgeInsets.all(12),
-              child: Text(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam maecenas mi non sed ut odio. Non, justo, sed facilisi et",
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-          const Gap(25),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget> [
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const SignIn()),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(0),
-                      bottomRight: Radius.circular(0),
-                      bottomLeft: Radius.circular(15),
-                      topLeft: Radius.circular(15),
-                    ),
-                  ),
-                ),
-                child: const Padding(
-                  padding: EdgeInsets.fromLTRB(25, 20, 25, 20),
-                  child: Text(
-                    'Sign in',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget> [
+            Container(
+              height: size.height * 0.5,
+              width: size.width,
+              decoration: const BoxDecoration(
+                color: primaryColor,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(50),
+                  bottomRight: Radius.circular(50),
                 ),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const SignIn()),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(0),
-                      bottomLeft: Radius.circular(0),
-                      topRight: Radius.circular(15),
-                      bottomRight: Radius.circular(15),
+              child: Image.asset("assets/images/aunty.png"),
+            ),
+            const Gap(40),
+            const Text(
+              "Discover Your",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 30,
+              ),
+            ),
+            const Gap(5),
+            const Text(
+              "Own Dream",
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 20,
+              ),
+            ),
+            const Gap(17),
+            const Center(
+              child: Padding(
+                padding: EdgeInsets.all(12),
+                child: Text(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam maecenas mi non sed ut odio. Non, justo, sed facilisi et",
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            const Gap(25),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget> [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const SignIn()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(0),
+                        bottomRight: Radius.circular(0),
+                        bottomLeft: Radius.circular(15),
+                        topLeft: Radius.circular(15),
+                      ),
+                    ),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.fromLTRB(25, 20, 25, 20),
+                    child: Text(
+                      'Sign in',
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.fromLTRB(25, 20, 25, 20),
-                  child: Text(
-                    'Register',
-                    style: TextStyle(
-                      color: primaryColor,
-                      fontSize: 22,
-                      fontWeight: FontWeight.w500,
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const SignIn()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(0),
+                        bottomLeft: Radius.circular(0),
+                        topRight: Radius.circular(15),
+                        bottomRight: Radius.circular(15),
+                      ),
                     ),
                   ),
-                ),
-              )
-            ],
-          ),
-        ],
+                  child: const Padding(
+                    padding: EdgeInsets.fromLTRB(25, 20, 25, 20),
+                    child: Text(
+                      'Register',
+                      style: TextStyle(
+                        color: primaryColor,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
