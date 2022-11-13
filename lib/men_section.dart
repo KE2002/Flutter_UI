@@ -81,11 +81,13 @@ class MenSection extends StatelessWidget {
           ],
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: <Widget>[
-            Row(
+      body: ListView(
+        shrinkWrap: true,
+        primary: true,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Row(
               children: <Widget>[
                 RichText(
                   text: const TextSpan(
@@ -111,8 +113,11 @@ class MenSection extends StatelessWidget {
                 ),
               ],
             ),
-            const Gap(20),
-            Row(
+          ),
+          const Gap(20),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Row(
               children: <Widget>[
                 Expanded(
                   child: TextField(
@@ -155,10 +160,13 @@ class MenSection extends StatelessWidget {
                 )
               ],
             ),
-            const Gap(20),
-            const ChooseBrand(),
-            const Gap(20),
-            Row(
+          ),
+          const Gap(20),
+          const ChooseBrand(),
+          const Gap(20),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const <Widget>[
                 Text(
@@ -179,46 +187,49 @@ class MenSection extends StatelessWidget {
                 ),
               ],
             ),
-            const Gap(20),
-            Expanded(
-              child: GridView(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: size.width > 380
-                      ? (size.width / 250).round()
-                      : size.width > 300
-                          ? 2
-                          : 1,
-                  childAspectRatio: 0.7,
-                  crossAxisSpacing: 30,
-                  mainAxisSpacing: 30,
-                ),
-                children: const [
-                  NewArrivalCard(text: "men1"),
-                  NewArrivalCard(text: "men2"),
-                  NewArrivalCard(text: "men1"),
-                  NewArrivalCard(text: "men2"),
-                  NewArrivalCard(text: "men1"),
-                  NewArrivalCard(text: "men2"),
-                  NewArrivalCard(text: "men1"),
-                  NewArrivalCard(text: "men1"),
-                  NewArrivalCard(text: "men1"),
-                  NewArrivalCard(text: "men2"),
-                  NewArrivalCard(text: "men1"),
-                  NewArrivalCard(text: "men2"),
-                  NewArrivalCard(text: "men1"),
-                  NewArrivalCard(text: "men2"),
-                  NewArrivalCard(text: "men1"),
-                  NewArrivalCard(text: "men2"),
-                  NewArrivalCard(text: "men1"),
-                  NewArrivalCard(text: "men2"),
-                  NewArrivalCard(text: "men1"),
-                  NewArrivalCard(text: "men2"),
-                  NewArrivalCard(text: "men1"),
-                ],
+          ),
+          const Gap(20),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: GridView(
+              shrinkWrap: true,
+              primary: false,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: size.width > 380
+                    ? (size.width / 250).round()
+                    : size.width > 300
+                        ? 2
+                        : 1,
+                childAspectRatio: 0.7,
+                crossAxisSpacing: 30,
+                mainAxisSpacing: 30,
               ),
-            )
-          ],
-        ),
+              children: const [
+                NewArrivalCard(text: "men1"),
+                NewArrivalCard(text: "men2"),
+                NewArrivalCard(text: "men1"),
+                NewArrivalCard(text: "men2"),
+                NewArrivalCard(text: "men1"),
+                NewArrivalCard(text: "men2"),
+                NewArrivalCard(text: "men1"),
+                NewArrivalCard(text: "men1"),
+                NewArrivalCard(text: "men1"),
+                NewArrivalCard(text: "men2"),
+                NewArrivalCard(text: "men1"),
+                NewArrivalCard(text: "men2"),
+                NewArrivalCard(text: "men1"),
+                NewArrivalCard(text: "men2"),
+                NewArrivalCard(text: "men1"),
+                NewArrivalCard(text: "men2"),
+                NewArrivalCard(text: "men1"),
+                NewArrivalCard(text: "men2"),
+                NewArrivalCard(text: "men1"),
+                NewArrivalCard(text: "men2"),
+                NewArrivalCard(text: "men1"),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

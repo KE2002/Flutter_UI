@@ -8,89 +8,92 @@ class ChooseBrand extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget> [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const <Widget>[
-            Text(
-              "Choose Brand",
-              style: TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.w500,
-                color: textColor1,
-              ),
-            ),
-            Text(
-              "View All",
-              style: TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w400,
-                color: Color(0xFF8F959E),
-              ),
-            ),
-          ],
-        ),
-        const Gap(10),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const <Widget>[
-              BrandCard(
-                icon: "assets/images/nike.png",
-                text: 'Nike',
+              Text(
+                "Choose Brand",
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w500,
+                  color: textColor1,
+                ),
               ),
-              Gap(10),
-              BrandCard(
-                icon: "assets/images/Adidas.png",
-                text: 'Adidas',
-              ),
-              Gap(10),
-              BrandCard(
-                icon: "assets/images/nike.png",
-                text: 'Nike',
-              ),
-              Gap(10),
-              BrandCard(
-                icon: "assets/images/nike.png",
-                text: 'Nike',
-              ),
-              Gap(10),
-              BrandCard(
-                icon: "assets/images/Adidas.png",
-                text: 'Adidas',
-              ),
-              Gap(10),
-              BrandCard(
-                icon: "assets/images/nike.png",
-                text: 'Nike',
-              ),
-              Gap(10),
-              BrandCard(
-                icon: "assets/images/nike.png",
-                text: 'Nike',
-              ),
-              Gap(10),
-              BrandCard(
-                icon: "assets/images/Adidas.png",
-                text: 'Adidas',
-              ),
-              Gap(10),
-              BrandCard(
-                icon: "assets/images/nike.png",
-                text: 'Nike',
-              ),
-              Gap(10),
-              BrandCard(
-                icon: "assets/images/Adidas.png",
-                text: 'Adidas',
+              Text(
+                "View All",
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w400,
+                  color: Color(0xFF8F959E),
+                ),
               ),
             ],
           ),
-        )
-      ],
+          const Gap(20),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: const <Widget>[
+                BrandCard(
+                  icon: "assets/images/nike.png",
+                  text: 'Nike',
+                ),
+                Gap(10),
+                BrandCard(
+                  icon: "assets/images/Adidas.png",
+                  text: 'Adidas',
+                ),
+                Gap(10),
+                BrandCard(
+                  icon: "assets/images/nike.png",
+                  text: 'Nike',
+                ),
+                Gap(10),
+                BrandCard(
+                  icon: "assets/images/nike.png",
+                  text: 'Nike',
+                ),
+                Gap(10),
+                BrandCard(
+                  icon: "assets/images/Adidas.png",
+                  text: 'Adidas',
+                ),
+                Gap(10),
+                BrandCard(
+                  icon: "assets/images/nike.png",
+                  text: 'Nike',
+                ),
+                Gap(10),
+                BrandCard(
+                  icon: "assets/images/nike.png",
+                  text: 'Nike',
+                ),
+                Gap(10),
+                BrandCard(
+                  icon: "assets/images/Adidas.png",
+                  text: 'Adidas',
+                ),
+                Gap(10),
+                BrandCard(
+                  icon: "assets/images/nike.png",
+                  text: 'Nike',
+                ),
+                Gap(10),
+                BrandCard(
+                  icon: "assets/images/Adidas.png",
+                  text: 'Adidas',
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
