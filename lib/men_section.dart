@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
-
+import 'package:login/new_arrival_cards.dart';
 import 'choosebrand.dart';
 import 'constant.dart';
 
@@ -10,6 +10,8 @@ class MenSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -28,7 +30,7 @@ class MenSection extends StatelessWidget {
             onPressed: () {},
           ),
         ),
-        actions: <Widget> [
+        actions: <Widget>[
           Container(
             margin: const EdgeInsets.only(right: 10),
             height: 45,
@@ -44,12 +46,47 @@ class MenSection extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: Container(
+        padding: const EdgeInsets.only(left: 20 * 2, right: 20 * 2),
+        height: 80,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              offset: const Offset(0, -10),
+              blurRadius: 35,
+              color: primaryColor.withOpacity(0.40),
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.home,
+                color: primaryColor,
+              ),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.favorite),
+            ),
+            IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart)),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.wallet),
+            ),
+          ],
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          children: <Widget> [
+          children: <Widget>[
             Row(
-              children: <Widget> [
+              children: <Widget>[
                 RichText(
                   text: const TextSpan(
                     children: [
@@ -76,7 +113,7 @@ class MenSection extends StatelessWidget {
             ),
             const Gap(20),
             Row(
-              children: <Widget> [
+              children: <Widget>[
                 Expanded(
                   child: TextField(
                     onChanged: (value) {},
@@ -119,7 +156,67 @@ class MenSection extends StatelessWidget {
               ],
             ),
             const Gap(20),
-            const ChooseBrand()
+            const ChooseBrand(),
+            const Gap(20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const <Widget>[
+                Text(
+                  "New Arrival",
+                  style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w500,
+                    color: textColor1,
+                  ),
+                ),
+                Text(
+                  "View All",
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xFF8F959E),
+                  ),
+                ),
+              ],
+            ),
+            const Gap(20),
+            Expanded(
+              child: GridView(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: size.width > 380
+                      ? (size.width / 250).round()
+                      : size.width > 300
+                          ? 2
+                          : 1,
+                  childAspectRatio: 0.7,
+                  crossAxisSpacing: 30,
+                  mainAxisSpacing: 30,
+                ),
+                children: const [
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                ],
+              ),
+            )
           ],
         ),
       ),
