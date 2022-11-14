@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:login/constant.dart';
-import 'package:login/review.dart';
+
 import 'package:login/size_box.dart';
 import 'package:readmore/readmore.dart';
 
