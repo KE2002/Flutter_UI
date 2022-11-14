@@ -18,28 +18,36 @@ class _AddressState extends State<Address> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: const Color(0xFFF3F3F3),
-      bottomNavigationBar: Container(
-          padding: const EdgeInsets.only(left: 20 * 2, right: 20 * 2),
-          height: 80,
-          decoration: BoxDecoration(
+      bottomNavigationBar: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const Address(),
+            ),
+          );
+        },
+        child: Container(
+          padding: const EdgeInsets.all(18),
+          decoration: const BoxDecoration(
             color: primaryColor,
-            boxShadow: [
-              BoxShadow(
-                offset: const Offset(0, -10),
-                blurRadius: 35,
-                color: primaryColor.withOpacity(0.40),
+          ),
+          width: size.width,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Text(
+                "Save Address",
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFFFEFEFE),
+                ),
               ),
             ],
           ),
-          child: const Center(
-            child: Text(
-              "Save Address",
-              style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 17,
-                  color: Colors.white),
-            ),
-          )),
+        ),
+      ),
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
@@ -254,7 +262,7 @@ class _AddressState extends State<Address> {
                       );
                     },
                     thumbColor: CupertinoColors.white,
-                    activeColor: CupertinoColors.activeGreen,
+                    activeColor: primaryColor,
                   ),
                 ],
               )
