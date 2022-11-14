@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:login/address.dart';
+import 'package:login/all_reviews.dart';
 import 'package:login/constant.dart';
 import 'package:login/review.dart';
 
@@ -254,19 +255,32 @@ class AboutProduct extends StatelessWidget {
                           const Gap(20),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const <Widget>[
-                              Text(
+                            children: <Widget>[
+                              const Text(
                                 "Reviews",
                                 style: TextStyle(
                                   fontSize: 17,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
-                              Text(
-                                "View All",
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w400,
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const AllReviews(),
+                                    ),
+                                  );
+                                },
+                                child: const MouseRegion(
+                                  cursor: SystemMouseCursors.click,
+                                  child: Text(
+                                    "View All",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ],
@@ -275,12 +289,19 @@ class AboutProduct extends StatelessWidget {
                             children: const <Widget>[
                               Review(
                                 name: "Akash",
+                                show: false,
                               ),
                               Review(
                                 name: "Kayee",
+                                show: false,
                               ),
                               Review(
                                 name: "Ronald Richards",
+                                show: false,
+                              ),
+                              Review(
+                                name: "Flutter",
+                                show: false,
                               ),
                             ],
                           ),
