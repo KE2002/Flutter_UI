@@ -13,6 +13,7 @@ class SideMenu extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(15, 15, 10, 15),
           child: Column(
             children: <Widget>[
+              const Gap(20),
               Row(
                 children: <Widget>[
                   RotatedBox(
@@ -165,7 +166,7 @@ class SideMenu extends StatelessWidget {
                   )
                 ],
               ),
-              const Gap(140),
+              const Gap(135),
               Row(
                 children: const <Widget>[
                   Icon(
