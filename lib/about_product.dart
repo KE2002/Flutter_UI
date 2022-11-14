@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:login/size_box.dart';
+import 'package:readmore/readmore.dart';
 
 class AboutProduct extends StatelessWidget {
   const AboutProduct({super.key});
@@ -8,54 +10,59 @@ class AboutProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      extendBodyBehindAppBar: true,
       backgroundColor: const Color(0xFFF3F3F3),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+        ),
+        leading: GestureDetector(
+          child: MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
+              child: Container(
+                height: 45,
+                width: 45,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xFFFEFEFE),
+                ),
+                child: const Icon(
+                  Icons.arrow_back,
+                ),
+              ),
+            ),
+          ),
+          onTap: () {
+            Navigator.pop(context);
+          },
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0, 0, 12, 0),
+            child: Container(
+              height: 45,
+              width: 45,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Color(0xFFFEFEFE),
+              ),
+              child: const Icon(
+                Icons.add_shopping_cart,
+              ),
+            ),
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: SizedBox(
           width: size.width,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  GestureDetector(
-                    child: MouseRegion(
-                      cursor: SystemMouseCursors.click,
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(12, 12, 12, 12),
-                        child: Container(
-                          height: 45,
-                          width: 45,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color(0xFFFEFEFE),
-                          ),
-                          child: const Icon(
-                            Icons.arrow_back,
-                          ),
-                        ),
-                      ),
-                    ),
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(12, 12, 12, 12),
-                    child: Container(
-                      height: 45,
-                      width: 45,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color(0xFFFEFEFE),
-                      ),
-                      child: const Icon(
-                        Icons.add_shopping_cart,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
               SizedBox(
                 child: Column(
                   children: <Widget>[
@@ -65,8 +72,11 @@ class AboutProduct extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
                       width: size.width,
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                      ),
                       child: Column(
-                        children: [
+                        children: <Widget>[
                           Row(
                             children: const <Widget>[
                               Text(
@@ -112,7 +122,7 @@ class AboutProduct extends StatelessWidget {
                               width: size.width,
                               child: Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+                                    MainAxisAlignment.spaceAround,
                                 children: [
                                   Image.asset(
                                     "assets/images/man1part1.png",
@@ -129,7 +139,96 @@ class AboutProduct extends StatelessWidget {
                                 ],
                               ),
                             ),
-                          )
+                          ),
+                          const Gap(15),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const <Widget>[
+                              Text(
+                                "Size",
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              Text(
+                                "Size Guide",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const Gap(10),
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: SizedBox(
+                              width: size.width,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: const [
+                                  SizeBox(data: "S"),
+                                  SizeBox(data: "M"),
+                                  SizeBox(data: "L"),
+                                  SizeBox(data: "XL"),
+                                  SizeBox(data: "2XL"),
+                                ],
+                              ),
+                            ),
+                          ),
+                          const Gap(20),
+                          Row(
+                            children: const [
+                              Text(
+                                "Description",
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const Gap(10),
+                          const ReadMoreText(
+                            "The Nike Throwback Pullover Hoodie is made from premium French terry fabric that blends a performance feel with Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                            trimLines: 3,
+                            trimMode: TrimMode.Line,
+                            style: TextStyle(
+                              color: Color(0xFF8F959E),
+                            ),
+                            trimCollapsedText: 'Read more',
+                            trimExpandedText: 'Show less',
+                            moreStyle: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            lessStyle: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const Gap(20),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const <Widget>[
+                              Text(
+                                "Reviews",
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              Text(
+                                "View All",
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ),
