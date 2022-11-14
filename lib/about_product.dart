@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:login/constant.dart';
+import 'package:login/review.dart';
 import 'package:login/size_box.dart';
 import 'package:readmore/readmore.dart';
 
@@ -10,6 +12,28 @@ class AboutProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      bottomNavigationBar: GestureDetector(
+        child: Container(
+          padding: const EdgeInsets.all(18),
+          decoration: const BoxDecoration(
+            color: primaryColor,
+          ),
+          width: size.width,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Text(
+                "Add to Cart",
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFFFEFEFE),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
       extendBodyBehindAppBar: true,
       backgroundColor: const Color(0xFFF3F3F3),
       appBar: AppBar(
@@ -63,6 +87,7 @@ class AboutProduct extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+              const Gap(15),
               SizedBox(
                 child: Column(
                   children: <Widget>[
@@ -168,7 +193,7 @@ class AboutProduct extends StatelessWidget {
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceAround,
-                                children: const [
+                                children: const <Widget>[
                                   SizeBox(data: "S"),
                                   SizeBox(data: "M"),
                                   SizeBox(data: "L"),
@@ -180,7 +205,7 @@ class AboutProduct extends StatelessWidget {
                           ),
                           const Gap(20),
                           Row(
-                            children: const [
+                            children: const <Widget>[
                               Text(
                                 "Description",
                                 style: TextStyle(
@@ -229,6 +254,52 @@ class AboutProduct extends StatelessWidget {
                               ),
                             ],
                           ),
+                          Column(
+                            children: const <Widget>[
+                              Review(
+                                name: "Akash",
+                              ),
+                              Review(
+                                name: "Kayee",
+                              ),
+                              Review(
+                                name: "Ronald Richards",
+                              ),
+                            ],
+                          ),
+                          const Gap(10),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const <Widget>[
+                                  Text(
+                                    "Total Price",
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  Gap(5),
+                                  Text(
+                                    " with VAT,SD",
+                                    style: TextStyle(
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const Text(
+                                "\$125",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ],
+                          )
                         ],
                       ),
                     ),
