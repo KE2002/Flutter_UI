@@ -10,6 +10,9 @@ class SizeBox extends StatelessWidget {
       height: 60,
       decoration: const BoxDecoration(
         color: Color(0xFFF5F6FA),
+        borderRadius: BorderRadius.all(
+          Radius.circular(10),
+        ),
       ),
       child: Center(
         child: Text(
