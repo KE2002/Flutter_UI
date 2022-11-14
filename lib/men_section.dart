@@ -202,7 +202,7 @@ class _MenSectionState extends State<MenSection> {
             padding: const EdgeInsets.all(20.0),
             child: GridView(
               shrinkWrap: true,
-              primary: false,
+              primary: true,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: size.width > 380
                     ? (size.width / 250).round()
