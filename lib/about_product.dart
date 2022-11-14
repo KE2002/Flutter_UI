@@ -25,7 +25,14 @@ class AboutProduct extends StatelessWidget {
         },
         child: Container(
           padding: const EdgeInsets.all(18),
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                offset: const Offset(0, -10),
+                blurRadius: 35,
+                color: primaryColor.withOpacity(0.40),
+              ),
+            ],
             color: primaryColor,
           ),
           width: size.width,
@@ -97,7 +104,7 @@ class AboutProduct extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              const Gap(15),
+              const Gap(24),
               SizedBox(
                 child: Column(
                   children: <Widget>[

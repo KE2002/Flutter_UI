@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:login/save_card.dart';
 
 import 'constant.dart';
 
@@ -23,13 +24,20 @@ class _AddressState extends State<Address> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const Address(),
+              builder: (context) => const SaveCard(),
             ),
           );
         },
         child: Container(
           padding: const EdgeInsets.all(18),
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                offset: const Offset(0, -10),
+                blurRadius: 35,
+                color: primaryColor.withOpacity(0.40),
+              ),
+            ],
             color: primaryColor,
           ),
           width: size.width,
