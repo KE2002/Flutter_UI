@@ -64,7 +64,7 @@ class _AddressState extends State<Address> {
           child: MouseRegion(
             cursor: SystemMouseCursors.click,
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(12, 12, 12, 12),
+              padding: const EdgeInsets.fromLTRB(12, 0, 0, 0),
               child: Container(
                 height: 45,
                 width: 45,
