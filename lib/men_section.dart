@@ -2,18 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:login/new_arrival_cards.dart';
+import 'package:login/side_menu.dart';
 import 'choosebrand.dart';
 import 'constant.dart';
 
-class MenSection extends StatelessWidget {
+class MenSection extends StatefulWidget {
   const MenSection({super.key});
 
   @override
+  State<MenSection> createState() => _MenSectionState();
+}
+
+class _MenSectionState extends State<MenSection> {
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
     return Scaffold(
+      key: scaffoldKey,
       backgroundColor: Colors.white,
+      drawer: const SideMenu(),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
@@ -27,7 +36,7 @@ class MenSection extends StatelessWidget {
           ),
           child: IconButton(
             icon: SvgPicture.asset("assets/images/menu.svg"),
-            onPressed: () {},
+            onPressed: () => scaffoldKey.currentState?.openDrawer(),
           ),
         ),
         actions: <Widget>[
