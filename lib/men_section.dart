@@ -124,7 +124,8 @@ class _MenSectionState extends State<MenSection> {
             ),
           ),
           const Gap(20),
-          Padding(
+          Container(
+            width: size.width,
             padding: const EdgeInsets.all(20.0),
             child: Row(
               children: <Widget>[
@@ -198,11 +199,12 @@ class _MenSectionState extends State<MenSection> {
             ),
           ),
           const Gap(20),
-          Padding(
+          Container(
+            width: size.width,
             padding: const EdgeInsets.all(20.0),
             child: GridView(
               shrinkWrap: true,
-              primary: true,
+              primary: false,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: size.width > 380
                     ? (size.width / 250).round()
