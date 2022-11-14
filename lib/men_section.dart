@@ -199,47 +199,47 @@ class _MenSectionState extends State<MenSection> {
             ),
           ),
           const Gap(20),
-          Container(
-            width: size.width,
-            padding: const EdgeInsets.all(20.0),
-            child: GridView(
-              shrinkWrap: true,
-              primary: false,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: size.width > 380
-                    ? (size.width / 250).round()
-                    : size.width > 300
-                        ? 2
-                        : 1,
-                childAspectRatio: 0.7,
-                crossAxisSpacing: 30,
-                mainAxisSpacing: 30,
-              ),
-              children: const [
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-              ],
-            ),
-          )
+          // Container(
+          //   width: size.width,
+          //   padding: const EdgeInsets.all(20.0),
+          //   child: GridView(
+          //     shrinkWrap: true,
+          //     primary: false,
+          //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          //       crossAxisCount: size.width > 380
+          //           ? (size.width / 250).round()
+          //           : size.width > 300
+          //               ? 2
+          //               : 1,
+          //       childAspectRatio: 0.7,
+          //       crossAxisSpacing: 30,
+          //       mainAxisSpacing: 30,
+          //     ),
+          //     children: const [
+          //       NewArrivalCard(text: "men1"),
+          //       NewArrivalCard(text: "men2"),
+          //       NewArrivalCard(text: "men1"),
+          //       NewArrivalCard(text: "men2"),
+          //       NewArrivalCard(text: "men1"),
+          //       NewArrivalCard(text: "men2"),
+          //       NewArrivalCard(text: "men1"),
+          //       NewArrivalCard(text: "men1"),
+          //       NewArrivalCard(text: "men1"),
+          //       NewArrivalCard(text: "men2"),
+          //       NewArrivalCard(text: "men1"),
+          //       NewArrivalCard(text: "men2"),
+          //       NewArrivalCard(text: "men1"),
+          //       NewArrivalCard(text: "men2"),
+          //       NewArrivalCard(text: "men1"),
+          //       NewArrivalCard(text: "men2"),
+          //       NewArrivalCard(text: "men1"),
+          //       NewArrivalCard(text: "men2"),
+          //       NewArrivalCard(text: "men1"),
+          //       NewArrivalCard(text: "men2"),
+          //       NewArrivalCard(text: "men1"),
+          //     ],
+          //   ),
+          // )
         ],
       ),
     );

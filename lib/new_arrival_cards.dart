@@ -9,6 +9,7 @@ class NewArrivalCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FittedBox(
+      fit: BoxFit.fitHeight,
       child: GestureDetector(
         onTap: () {
           Navigator.push(
