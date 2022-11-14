@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:login/address.dart';
+import 'package:login/constant.dart';
+import 'package:login/review.dart';
 
 import 'package:login/size_box.dart';
 import 'package:readmore/readmore.dart';
@@ -12,6 +15,14 @@ class AboutProduct extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       bottomNavigationBar: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const Address(),
+            ),
+          );
+        },
         child: Container(
           padding: const EdgeInsets.all(18),
           decoration: const BoxDecoration(
