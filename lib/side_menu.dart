@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:login/login.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({super.key});
@@ -167,22 +168,32 @@ class SideMenu extends StatelessWidget {
                 ],
               ),
               const Gap(135),
-              Row(
-                children: const <Widget>[
-                  Icon(
-                    Icons.logout_rounded,
-                    color: Color(0xFFFF5757),
-                  ),
-                  Gap(10),
-                  Text(
-                    "Logout",
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400,
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Login(),
+                      ),
+                      (Route route) => false);
+                },
+                child: Row(
+                  children: const <Widget>[
+                    Icon(
+                      Icons.logout_rounded,
                       color: Color(0xFFFF5757),
                     ),
-                  ),
-                ],
+                    Gap(10),
+                    Text(
+                      "Logout",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xFFFF5757),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

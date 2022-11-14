@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:login/address.dart';
 import 'package:login/all_reviews.dart';
+import 'package:login/cart.dart';
 import 'package:login/constant.dart';
 import 'package:login/review.dart';
 
@@ -20,7 +21,7 @@ class AboutProduct extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const Address(),
+              builder: (context) => const Cart(),
             ),
           );
         },
