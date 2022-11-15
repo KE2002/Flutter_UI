@@ -161,7 +161,7 @@ class _MenSectionState extends State<MenSection> {
                                   });
                                   _controller.clear();
                                 },
-                                icon: Icon(Icons.close_sharp),
+                                icon: const Icon(Icons.close_sharp),
                               )
                             : null,
                         icon: const Icon(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:login/women_section.dart';
+
 import 'constant.dart';
 import 'men_section.dart';
 
@@ -34,7 +34,7 @@ class Gender extends StatelessWidget {
                   ),
                 ),
                 child: Column(
-                  children: <Widget> [
+                  children: <Widget>[
                     RichText(
                       textAlign: TextAlign.center,
                       text: const TextSpan(
@@ -60,13 +60,13 @@ class Gender extends StatelessWidget {
                     const Gap(20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget> [
+                      children: <Widget>[
                         ElevatedButton(
                           onPressed: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const WomenSection(),
+                                builder: (context) => const MenSection(),
                               ),
                             );
                           },
@@ -129,6 +129,14 @@ class Gender extends StatelessWidget {
                     ),
                     const Gap(20),
                     GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const MenSection(),
+                          ),
+                        );
+                      },
                       child: const Text("Skip"),
                     )
                   ],
