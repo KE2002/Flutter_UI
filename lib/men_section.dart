@@ -56,40 +56,41 @@ class _MenSectionState extends State<MenSection> {
           ),
         ],
       ),
-      bottomNavigationBar: Container(
-        padding: const EdgeInsets.all(18),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              offset: const Offset(0, -10),
-              blurRadius: 35,
-              color: primaryColor.withOpacity(0.40),
-            ),
-          ],
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.home,
-                color: primaryColor,
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.favorite),
-            ),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart)),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.wallet),
-            ),
-          ],
-        ),
-      ),
+      // bottomNavigationBar:
+      // Container(
+      //   padding: const EdgeInsets.all(18),
+      //   decoration: BoxDecoration(
+      //     color: Colors.white,
+      //     boxShadow: [
+      //       BoxShadow(
+      //         offset: const Offset(0, -10),
+      //         blurRadius: 35,
+      //         color: primaryColor.withOpacity(0.40),
+      //       ),
+      //     ],
+      //   ),
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //     children: [
+      //       IconButton(
+      //         onPressed: () {},
+      //         icon: const Icon(
+      //           Icons.home,
+      //           color: primaryColor,
+      //         ),
+      //       ),
+      //       IconButton(
+      //         onPressed: () {},
+      //         icon: const Icon(Icons.favorite),
+      //       ),
+      //       IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart)),
+      //       IconButton(
+      //         onPressed: () {},
+      //         icon: const Icon(Icons.wallet),
+      //       ),
+      //     ],
+      //   ),
+      // ),
       body: ListView(
         shrinkWrap: true,
         primary: true,
