@@ -23,7 +23,7 @@ class _MenSectionState extends State<MenSection> {
       key: scaffoldKey,
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
-      drawer: const SideMenu(),
+      // drawer: const SideMenu(),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
