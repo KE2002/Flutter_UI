@@ -14,6 +14,9 @@ class MenSection extends StatefulWidget {
 }
 
 class _MenSectionState extends State<MenSection> {
+  bool isIconVisible = false;
+  static final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final _controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -22,7 +25,7 @@ class _MenSectionState extends State<MenSection> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Colors.white,
-      resizeToAvoidBottomInset: false,
+      // resizeToAvoidBottomInset: false,
       drawer: const SideMenu(),
       appBar: AppBar(
         elevation: 0,
@@ -90,158 +93,186 @@ class _MenSectionState extends State<MenSection> {
           ],
         ),
       ),
-      body: ListView(
-        shrinkWrap: true,
+      body: SingleChildScrollView(
         primary: true,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Row(
-              children: <Widget>[
-                RichText(
-                  text: const TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "AkashnKayEe\n",
-                        style: TextStyle(
-                          color: Color(0xFF1D1E20),
-                          fontWeight: FontWeight.w600,
-                          fontSize: 28,
+        child: Column(
+          // shrinkWrap: true,
+          // primary: true,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                children: <Widget>[
+                  RichText(
+                    text: const TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "AkashnKayEe\n",
+                          style: TextStyle(
+                            color: Color(0xFF1D1E20),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 28,
+                          ),
                         ),
-                      ),
-                      TextSpan(
-                        text: "Welcome to Gucci",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          color: Color(0xFF8F959E),
-                          fontSize: 15,
+                        TextSpan(
+                          text: "Welcome to Gucci",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xFF8F959E),
+                            fontSize: 15,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          const Gap(20),
-          Container(
-            width: size.width,
-            padding: const EdgeInsets.all(20.0),
-            child: Row(
-              children: <Widget>[
-                SizedBox(
-                  width: size.width - 95,
-                  child: TextField(
-                    onChanged: (value) {},
-                    decoration: InputDecoration(
-                      icon: const Icon(
-                        Icons.search,
-                      ),
-                      filled: true,
-                      fillColor: textBoxColor,
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                        borderSide: const BorderSide(
-                          color: textBoxColor,
-                          width: 0.0,
+            const Gap(20),
+            Container(
+              width: size.width,
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                children: <Widget>[
+                  SizedBox(
+                    width: size.width - 95,
+                    child: TextField(
+                      controller: _controller,
+                      key: _formKey,
+                      onChanged: (value) {
+                        if (value.isNotEmpty) {
+                          setState(() {
+                            isIconVisible = true;
+                          });
+                        } else {
+                          setState(() {
+                            isIconVisible = false;
+                          });
+                        }
+                      },
+                      decoration: InputDecoration(
+                        suffixIcon: isIconVisible
+                            ? IconButton(
+                                hoverColor: Colors.transparent,
+                                splashColor: Colors.transparent,
+                                onPressed: () {
+                                  setState(() {
+                                    isIconVisible = false;
+                                  });
+                                  _controller.clear();
+                                },
+                                icon: const Icon(Icons.close_sharp),
+                              )
+                            : null,
+                        icon: const Icon(
+                          Icons.search,
                         ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                        borderSide: const BorderSide(
-                          color: textBoxColor,
-                          width: 0.0,
+                        filled: true,
+                        fillColor: textBoxColor,
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: const BorderSide(
+                            color: textBoxColor,
+                            width: 0.0,
+                          ),
                         ),
-                      ),
-                      hintText: "Search Here",
-                      hintStyle: const TextStyle(
-                        color: primaryColor,
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: const BorderSide(
+                            color: textBoxColor,
+                            width: 0.0,
+                          ),
+                        ),
+                        hintText: "Search Here",
+                        hintStyle: const TextStyle(
+                          color: primaryColor,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                const Gap(10),
-                Container(
-                  padding: const EdgeInsets.all(10.0),
-                  decoration: BoxDecoration(
-                    color: primaryColor,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Icon(Icons.mic_none_outlined),
-                )
-              ],
-            ),
-          ),
-          const Gap(20),
-          const ChooseBrand(),
-          const Gap(20),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const <Widget>[
-                Text(
-                  "New Arrival",
-                  style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500,
-                    color: textColor1,
-                  ),
-                ),
-                Text(
-                  "View All",
-                  style: TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF8F959E),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const Gap(20),
-          Container(
-            width: size.width,
-            padding: const EdgeInsets.all(20.0),
-            child: GridView(
-              shrinkWrap: true,
-              primary: false,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: size.width > 380
-                    ? (size.width / 250).round()
-                    : size.width > 300
-                        ? 2
-                        : 1,
-                childAspectRatio: 0.7,
-                crossAxisSpacing: 30,
-                mainAxisSpacing: 30,
+                  const Gap(10),
+                  Container(
+                    padding: const EdgeInsets.all(10.0),
+                    decoration: BoxDecoration(
+                      color: primaryColor,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Icon(Icons.mic_none_outlined),
+                  )
+                ],
               ),
-              children: const [
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-              ],
             ),
-          )
-        ],
+            const Gap(20),
+            const ChooseBrand(),
+            const Gap(20),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const <Widget>[
+                  Text(
+                    "New Arrival",
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                      color: textColor1,
+                    ),
+                  ),
+                  Text(
+                    "View All",
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF8F959E),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const Gap(20),
+            Container(
+              width: size.width,
+              padding: const EdgeInsets.all(20.0),
+              child: GridView(
+                shrinkWrap: true,
+                primary: false,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: size.width > 380
+                      ? (size.width / 250).round()
+                      : size.width > 300
+                          ? 2
+                          : 1,
+                  childAspectRatio: 0.7,
+                  crossAxisSpacing: 30,
+                  mainAxisSpacing: 30,
+                ),
+                children: const [
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
