@@ -14,7 +14,9 @@ class MenSection extends StatefulWidget {
 }
 
 class _MenSectionState extends State<MenSection> {
+  bool isIconVisible = false;
   static final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final _controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -135,9 +137,33 @@ class _MenSectionState extends State<MenSection> {
                   SizedBox(
                     width: size.width - 95,
                     child: TextField(
+                      controller: _controller,
                       key: _formKey,
-                      onChanged: (value) {},
+                      onChanged: (value) {
+                        if (value.isNotEmpty) {
+                          setState(() {
+                            isIconVisible = true;
+                          });
+                        } else {
+                          setState(() {
+                            isIconVisible = false;
+                          });
+                        }
+                      },
                       decoration: InputDecoration(
+                        suffixIcon: isIconVisible
+                            ? IconButton(
+                                hoverColor: Colors.transparent,
+                                splashColor: Colors.transparent,
+                                onPressed: () {
+                                  setState(() {
+                                    isIconVisible = false;
+                                  });
+                                  _controller.clear();
+                                },
+                                icon: Icon(Icons.close_sharp),
+                              )
+                            : null,
                         icon: const Icon(
                           Icons.search,
                         ),
