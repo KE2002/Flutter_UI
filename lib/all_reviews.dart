@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:login/constant.dart';
 import 'package:login/review.dart';
 
 class AllReviews extends StatelessWidget {
@@ -49,123 +48,126 @@ class AllReviews extends StatelessWidget {
           },
         ),
       ),
-      body: Column(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      "245 Reviews",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    const Gap(3),
-                    Row(
-                      children: const <Widget>[
-                        Text("4.8"),
-                        Gap(3),
-                        Icon(
-                          Icons.star,
-                          color: Color(0xFFFF981F),
-                          size: 14,
-                        ),
-                        Icon(
-                          Icons.star,
-                          color: Color(0xFFFF981F),
-                          size: 14,
-                        ),
-                        Icon(
-                          Icons.star,
-                          color: Color(0xFFFF981F),
-                          size: 14,
-                        ),
-                        Icon(
-                          Icons.star,
-                          color: Color(0xFFFF981F),
-                          size: 14,
-                        ),
-                        Icon(
-                          Icons.star,
-                          color: Color(0xFFFF981F),
-                          size: 14,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                TextButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                      const Color(0xFFFF7043),
-                    ),
-                  ),
-                  child: Row(
-                    children: const <Widget>[
-                      Icon(
-                        Icons.edit_note,
-                        color: Colors.white,
-                      ),
-                      Gap(3),
-                      Text(
-                        "Add Review",
+      body: SizedBox(
+        width: size.width,
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "245 Reviews",
                         style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      const Gap(3),
+                      Row(
+                        children: const <Widget>[
+                          Text("4.8"),
+                          Gap(3),
+                          Icon(
+                            Icons.star,
+                            color: Color(0xFFFF981F),
+                            size: 14,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Color(0xFFFF981F),
+                            size: 14,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Color(0xFFFF981F),
+                            size: 14,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Color(0xFFFF981F),
+                            size: 14,
+                          ),
+                          Icon(
+                            Icons.star,
+                            color: Color(0xFFFF981F),
+                            size: 14,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color(0xFFFF7043),
+                      ),
+                    ),
+                    child: Row(
+                      children: const <Widget>[
+                        Icon(
+                          Icons.edit_note,
                           color: Colors.white,
                         ),
-                      )
+                        Gap(3),
+                        Text(
+                          "Add Review",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 15),
+                  child: Column(
+                    children: const <Widget>[
+                      Review(
+                        name: "Akash",
+                        show: true,
+                      ),
+                      Review(
+                        name: "Kayee",
+                        show: true,
+                      ),
+                      Review(
+                        name: "Flutter",
+                        show: true,
+                      ),
+                      Review(
+                        name: "Akash",
+                        show: true,
+                      ),
+                      Review(
+                        name: "Okkkkkkkkk",
+                        show: true,
+                      ),
+                      Review(
+                        name: "Plzzzzzzzzzzzz",
+                        show: true,
+                      ),
+                      Review(
+                        name: "Hi",
+                        show: true,
+                      ),
                     ],
                   ),
                 ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(20, 0, 20, 15),
-                child: Column(
-                  children: const <Widget>[
-                    Review(
-                      name: "Akash",
-                      show: true,
-                    ),
-                    Review(
-                      name: "Kayee",
-                      show: true,
-                    ),
-                    Review(
-                      name: "Flutter",
-                      show: true,
-                    ),
-                    Review(
-                      name: "Akash",
-                      show: true,
-                    ),
-                    Review(
-                      name: "Okkkkkkkkk",
-                      show: true,
-                    ),
-                    Review(
-                      name: "Plzzzzzzzzzzzz",
-                      show: true,
-                    ),
-                    Review(
-                      name: "Hi",
-                      show: true,
-                    ),
-                  ],
-                ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

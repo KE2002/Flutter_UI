@@ -103,7 +103,7 @@ class Checkout extends StatelessWidget {
               ),
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: ElevatedButton(
@@ -112,7 +112,7 @@ class Checkout extends StatelessWidget {
                 elevation: 0,
                 padding: const EdgeInsets.only(
                     left: 10, right: 10, top: 20, bottom: 20),
-                backgroundColor: Color(0xFFF5F5F5),
+                backgroundColor: const Color(0xFFF5F5F5),
                 shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
