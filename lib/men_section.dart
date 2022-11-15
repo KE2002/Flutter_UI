@@ -87,7 +87,76 @@ class _MenSectionState extends State<MenSection> {
             ),
             IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart)),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return Wrap(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(20),
+                            height: size.height * 0.20,
+                            child: Row(
+                              children: <Widget>[
+                                CircleAvatar(
+                                  radius: 30,
+                                  child:
+                                      Image.asset("assets/images/profile.png"),
+                                ),
+                                const Gap(15),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    const Text(
+                                      "Hemendra",
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    const Gap(5),
+                                    Row(
+                                      children: const <Widget>[
+                                        Text(
+                                          "Verified Profile",
+                                          style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                        Gap(5),
+                                        Icon(
+                                          Icons.trip_origin,
+                                          color: Colors.green,
+                                          size: 10,
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                const Spacer(),
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: const [
+                                    Text("Total Amount"),
+                                    Text(
+                                      "\$500",
+                                      style: TextStyle(
+                                        color: primaryColor,
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      );
+                    });
+              },
               icon: const Icon(Icons.wallet),
             ),
           ],
