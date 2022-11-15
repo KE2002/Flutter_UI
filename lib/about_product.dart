@@ -85,15 +85,25 @@ class AboutProduct extends StatelessWidget {
         actions: [
           Padding(
             padding: const EdgeInsets.fromLTRB(0, 0, 12, 0),
-            child: Container(
-              height: 45,
-              width: 45,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Color(0xFFFEFEFE),
-              ),
-              child: const Icon(
-                Icons.add_shopping_cart,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Cart(),
+                  ),
+                );
+              },
+              child: Container(
+                height: 45,
+                width: 45,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xFFFEFEFE),
+                ),
+                child: const Icon(
+                  Icons.shopping_bag_outlined,
+                ),
               ),
             ),
           ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
+import 'package:login/cart.dart';
 import 'package:login/new_arrival_cards.dart';
 import 'package:login/side_menu.dart';
 import 'choosebrand.dart';
@@ -15,10 +16,11 @@ class MenSection extends StatefulWidget {
 
 class _MenSectionState extends State<MenSection> {
   bool isIconVisible = false;
-  static final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final _controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
     Size size = MediaQuery.of(context).size;
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -44,17 +46,27 @@ class _MenSectionState extends State<MenSection> {
           ),
         ),
         actions: <Widget>[
-          Container(
-            margin: const EdgeInsets.only(right: 10),
-            height: 45,
-            width: 45,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              color: Color(0xFFF5F6FA),
-            ),
-            child: const Icon(
-              Icons.add_shopping_cart,
-              color: Color(0xFF1D1E20),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Cart(),
+                ),
+              );
+            },
+            child: Container(
+              margin: const EdgeInsets.only(right: 10),
+              height: 45,
+              width: 45,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Color(0xFFF5F6FA),
+              ),
+              child: const Icon(
+                Icons.shopping_bag_rounded,
+                color: Color(0xFF1D1E20),
+              ),
             ),
           ),
         ],
@@ -85,7 +97,17 @@ class _MenSectionState extends State<MenSection> {
               onPressed: () {},
               icon: const Icon(Icons.favorite),
             ),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart)),
+            IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Cart(),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.shopping_cart),
+            ),
             IconButton(
               onPressed: () {
                 showModalBottomSheet(
@@ -207,7 +229,7 @@ class _MenSectionState extends State<MenSection> {
                     width: size.width - 95,
                     child: TextField(
                       controller: _controller,
-                      key: _formKey,
+                      key: formKey,
                       onChanged: (value) {
                         if (value.isNotEmpty) {
                           setState(() {

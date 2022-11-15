@@ -72,7 +72,16 @@ class Checkout extends StatelessWidget {
             ),
           ),
           onTap: () {
-            Navigator.pop(context);
+            Navigator.pop(
+              context,
+              ModalRoute.withName('/'),
+            );
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const MenSection(),
+              ),
+            );
           },
         ),
       ),
