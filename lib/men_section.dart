@@ -14,6 +14,7 @@ class MenSection extends StatefulWidget {
 }
 
 class _MenSectionState extends State<MenSection> {
+  static final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -22,8 +23,8 @@ class _MenSectionState extends State<MenSection> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Colors.white,
-      resizeToAvoidBottomInset: false,
-      // drawer: const SideMenu(),
+      // resizeToAvoidBottomInset: false,
+      drawer: const SideMenu(),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
@@ -134,6 +135,7 @@ class _MenSectionState extends State<MenSection> {
                   SizedBox(
                     width: size.width - 95,
                     child: TextField(
+                      key: _formKey,
                       onChanged: (value) {},
                       decoration: InputDecoration(
                         icon: const Icon(
