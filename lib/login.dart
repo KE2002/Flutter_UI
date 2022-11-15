@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:login/constant.dart';
+import 'package:login/sign_up.dart';
 import 'package:login/signin.dart';
 
 class Login extends StatelessWidget {
@@ -14,7 +15,7 @@ class Login extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: <Widget> [
+          children: <Widget>[
             Container(
               height: size.height * 0.5,
               width: size.width,
@@ -56,7 +57,7 @@ class Login extends StatelessWidget {
             const Gap(25),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget> [
+              children: <Widget>[
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(
@@ -89,7 +90,7 @@ class Login extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const SignIn()),
+                      MaterialPageRoute(builder: (context) => const SignUp()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
