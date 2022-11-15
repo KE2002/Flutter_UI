@@ -16,11 +16,10 @@ class MenSection extends StatefulWidget {
 
 class _MenSectionState extends State<MenSection> {
   bool isIconVisible = false;
+  static final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final _controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
     Size size = MediaQuery.of(context).size;
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -229,7 +228,7 @@ class _MenSectionState extends State<MenSection> {
                     width: size.width - 95,
                     child: TextField(
                       controller: _controller,
-                      key: formKey,
+                      key: _formKey,
                       onChanged: (value) {
                         if (value.isNotEmpty) {
                           setState(() {
