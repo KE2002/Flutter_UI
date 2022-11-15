@@ -241,7 +241,10 @@ class Cart extends StatelessWidget {
                     ),
                   ),
                   const Gap(5),
-                  Icon(Icons.check_circle_outlined)
+                  Icon(
+                    Icons.check_circle_outlined,
+                    color: Colors.greenAccent,
+                  )
                 ],
               ),
               const Gap(10),
@@ -288,7 +291,10 @@ class Cart extends StatelessWidget {
                     ),
                   ),
                   const Gap(5),
-                  Icon(Icons.check_circle_outlined)
+                  Icon(
+                    Icons.check_circle_outlined,
+                    color: Colors.greenAccent,
+                  )
                 ],
               ),
               const Gap(20),
