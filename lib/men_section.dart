@@ -56,193 +56,195 @@ class _MenSectionState extends State<MenSection> {
           ),
         ],
       ),
-      // bottomNavigationBar:
-      // Container(
-      //   padding: const EdgeInsets.all(18),
-      //   decoration: BoxDecoration(
-      //     color: Colors.white,
-      //     boxShadow: [
-      //       BoxShadow(
-      //         offset: const Offset(0, -10),
-      //         blurRadius: 35,
-      //         color: primaryColor.withOpacity(0.40),
-      //       ),
-      //     ],
-      //   ),
-      //   child: Row(
-      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //     children: [
-      //       IconButton(
-      //         onPressed: () {},
-      //         icon: const Icon(
-      //           Icons.home,
-      //           color: primaryColor,
-      //         ),
-      //       ),
-      //       IconButton(
-      //         onPressed: () {},
-      //         icon: const Icon(Icons.favorite),
-      //       ),
-      //       IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart)),
-      //       IconButton(
-      //         onPressed: () {},
-      //         icon: const Icon(Icons.wallet),
-      //       ),
-      //     ],
-      //   ),
-      // ),
-      body: ListView(
-        shrinkWrap: true,
-        primary: true,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Row(
-              children: <Widget>[
-                RichText(
-                  text: const TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "AkashnKayEe\n",
-                        style: TextStyle(
-                          color: Color(0xFF1D1E20),
-                          fontWeight: FontWeight.w600,
-                          fontSize: 28,
-                        ),
-                      ),
-                      TextSpan(
-                        text: "Welcome to Gucci",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          color: Color(0xFF8F959E),
-                          fontSize: 15,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+      bottomNavigationBar: Container(
+        padding: const EdgeInsets.all(18),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              offset: const Offset(0, -10),
+              blurRadius: 35,
+              color: primaryColor.withOpacity(0.40),
             ),
-          ),
-          const Gap(20),
-          Container(
-            width: size.width,
-            padding: const EdgeInsets.all(20.0),
-            child: Row(
-              children: <Widget>[
-                SizedBox(
-                  width: size.width - 95,
-                  child: TextField(
-                    onChanged: (value) {},
-                    decoration: InputDecoration(
-                      icon: const Icon(
-                        Icons.search,
-                      ),
-                      filled: true,
-                      fillColor: textBoxColor,
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                        borderSide: const BorderSide(
-                          color: textBoxColor,
-                          width: 0.0,
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.home,
+                color: primaryColor,
+              ),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.favorite),
+            ),
+            IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart)),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.wallet),
+            ),
+          ],
+        ),
+      ),
+      body: SingleChildScrollView(
+        primary: true,
+        child: Column(
+          // shrinkWrap: true,
+          // primary: true,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                children: <Widget>[
+                  RichText(
+                    text: const TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "AkashnKayEe\n",
+                          style: TextStyle(
+                            color: Color(0xFF1D1E20),
+                            fontWeight: FontWeight.w600,
+                            fontSize: 28,
+                          ),
                         ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                        borderSide: const BorderSide(
-                          color: textBoxColor,
-                          width: 0.0,
+                        TextSpan(
+                          text: "Welcome to Gucci",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xFF8F959E),
+                            fontSize: 15,
+                          ),
                         ),
-                      ),
-                      hintText: "Search Here",
-                      hintStyle: const TextStyle(
-                        color: primaryColor,
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const Gap(20),
+            Container(
+              width: size.width,
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                children: <Widget>[
+                  SizedBox(
+                    width: size.width - 95,
+                    child: TextField(
+                      onChanged: (value) {},
+                      decoration: InputDecoration(
+                        icon: const Icon(
+                          Icons.search,
+                        ),
+                        filled: true,
+                        fillColor: textBoxColor,
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: const BorderSide(
+                            color: textBoxColor,
+                            width: 0.0,
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: const BorderSide(
+                            color: textBoxColor,
+                            width: 0.0,
+                          ),
+                        ),
+                        hintText: "Search Here",
+                        hintStyle: const TextStyle(
+                          color: primaryColor,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                const Gap(10),
-                Container(
-                  padding: const EdgeInsets.all(10.0),
-                  decoration: BoxDecoration(
-                    color: primaryColor,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: const Icon(Icons.mic_none_outlined),
-                )
-              ],
-            ),
-          ),
-          const Gap(20),
-          const ChooseBrand(),
-          const Gap(20),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const <Widget>[
-                Text(
-                  "New Arrival",
-                  style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500,
-                    color: textColor1,
-                  ),
-                ),
-                Text(
-                  "View All",
-                  style: TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF8F959E),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const Gap(20),
-          Container(
-            width: size.width,
-            padding: const EdgeInsets.all(20.0),
-            child: GridView(
-              shrinkWrap: true,
-              primary: false,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: size.width > 380
-                    ? (size.width / 250).round()
-                    : size.width > 300
-                        ? 2
-                        : 1,
-                childAspectRatio: 0.7,
-                crossAxisSpacing: 30,
-                mainAxisSpacing: 30,
+                  const Gap(10),
+                  Container(
+                    padding: const EdgeInsets.all(10.0),
+                    decoration: BoxDecoration(
+                      color: primaryColor,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Icon(Icons.mic_none_outlined),
+                  )
+                ],
               ),
-              children: const [
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-                NewArrivalCard(text: "men2"),
-                NewArrivalCard(text: "men1"),
-              ],
             ),
-          )
-        ],
+            const Gap(20),
+            const ChooseBrand(),
+            const Gap(20),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const <Widget>[
+                  Text(
+                    "New Arrival",
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500,
+                      color: textColor1,
+                    ),
+                  ),
+                  Text(
+                    "View All",
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF8F959E),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const Gap(20),
+            Container(
+              width: size.width,
+              padding: const EdgeInsets.all(20.0),
+              child: GridView(
+                shrinkWrap: true,
+                primary: false,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: size.width > 380
+                      ? (size.width / 250).round()
+                      : size.width > 300
+                          ? 2
+                          : 1,
+                  childAspectRatio: 0.7,
+                  crossAxisSpacing: 30,
+                  mainAxisSpacing: 30,
+                ),
+                children: const [
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                  NewArrivalCard(text: "men2"),
+                  NewArrivalCard(text: "men1"),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
